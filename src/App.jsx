@@ -1,14 +1,24 @@
-import { addTestFoyer } from "./services/testFirestore.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-function App() {
+
+export default function App() {
   return (
-    <button
-      onClick={addTestFoyer}
-      className="bg-blue-500 text-white p-3 rounded"
-    >
-      Tester Firestore
-    </button>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
