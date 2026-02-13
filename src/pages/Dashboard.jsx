@@ -1,16 +1,11 @@
-import { logoutAdmin } from "../services/authService";
+import Layout from "../components/Layout";
 
 export default function Dashboard() {
   return (
-    <div>
-      <h1>Dashboard</h1>
-
-      <button
-        onClick={logoutAdmin}
-        className="bg-red-500 text-white p-2"
-      >
-        Logout
-      </button>
-    </div>
+    <Layout>
+      <h1 className="text-2xl font-bold">
+        Bienvenue sur Jironay Admin
+      </h1>
+    </Layout>
   );
 }

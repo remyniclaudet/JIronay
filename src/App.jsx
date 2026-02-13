@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Foyers from "./pages/Foyers";
 
 
 export default function App() {
@@ -16,6 +17,11 @@ export default function App() {
               <Dashboard />
             </ProtectedRoute>
           }
+        />
+
+         <Route
+          path="/foyers"
+          element={<ProtectedRoute><Foyers /></ProtectedRoute>}
         />
 
       </Routes>
